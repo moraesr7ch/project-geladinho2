@@ -760,29 +760,57 @@ body {
 }
 
 /* ============================================================
-   GUARANTEE
+   GUARANTEE SEAL
    ============================================================ */
-#guarantee { background: #fff; padding: 52px 20px; }
-.guarantee-inner {
-  max-width: 540px;
-  margin: 0 auto;
-  text-align: center;
+#guarantee {
+  background: linear-gradient(135deg, #fff5f8 0%, #fffbf0 100%);
+  padding: 52px 20px;
+  border-top: 1.5px solid #f0dde8;
+  border-bottom: 1.5px solid #f0dde8;
 }
-.guarantee-badge-wrap { display: flex; justify-content: center; margin-bottom: 22px; }
-.guarantee-badge {
-  width: 108px; height: 108px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--green) 0%, #1abc72 100%);
+.guarantee-inner {
+  max-width: 720px;
+  margin: 0 auto;
+  background: #fff;
+  border-radius: 24px;
+  border: 1.5px solid #f0dde8;
+  box-shadow: 0 6px 28px rgba(232, 83, 122, 0.08);
+  padding: 36px 28px;
+  /* Mobile: stacked */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  box-shadow: 0 8px 28px rgba(42,157,92,0.3);
-  color: #fff;
-  animation: float 3.5s ease infinite;
+  gap: 28px;
+  text-align: center;
 }
-.guarantee-badge .g-days { font-size: 2rem; font-weight: 900; line-height: 1; }
-.guarantee-badge .g-label { font-size: 0.55rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; }
+.guarantee-seal-wrap {
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+}
+.guarantee-seal-img {
+  width: 160px;
+  max-width: 160px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 4px 14px rgba(42, 157, 92, 0.25));
+}
+.guarantee-copy {}
+.guarantee-headline {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--text-dark);
+  line-height: 1.2;
+  margin-bottom: 12px;
+}
+.guarantee-headline .accent { color: var(--pink); }
+.guarantee-body {
+  font-size: 0.95rem;
+  color: var(--text-mid);
+  line-height: 1.7;
+}
+.guarantee-body strong { color: var(--text-dark); }
+
 
 /* ============================================================
    FAQ
@@ -994,6 +1022,15 @@ body {
   /* Social proof gallery — 2 per row on tablet */
   .proof-gallery { grid-template-columns: 1fr 1fr; }
   .proof-title { font-size: 2.2rem; }
+
+  /* Guarantee seal — side by side on tablet+ */
+  .guarantee-inner {
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+    gap: 36px;
+  }
+  .guarantee-seal-img { width: 160px; max-width: 160px; }
 }
 
 /* ============================================================
@@ -1021,4 +1058,8 @@ body {
   /* Social proof gallery — 3 side by side on desktop */
   .proof-gallery { grid-template-columns: 1fr 1fr 1fr; }
   .proof-title { font-size: 2.6rem; }
+
+  /* Guarantee seal — larger image on desktop */
+  .guarantee-seal-img { width: 200px; max-width: 200px; }
+  .guarantee-headline { font-size: 1.7rem; }
 }
